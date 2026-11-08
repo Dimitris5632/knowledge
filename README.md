@@ -88,7 +88,7 @@ knowledge/
 **Requirements:** PHP 8.1+ (with `pdo_mysql`, `fileinfo`, `mbstring`, `curl`, `zip`) and MySQL 8 or MariaDB 10.6+.
 
 ```bash
-git clone https://github.com/<your-account>/knowledge.git
+git clone https://github.com/Dimitris5632/knowledge.git
 cd knowledge
 cp .env.example .env                        # edit DB_USER / DB_PASS
 mysql -u root -p < migrations/001_initial_schema.sql
@@ -115,8 +115,8 @@ Step-by-step guide: **[deploy/azure/README.md](deploy/azure/README.md)**. In sho
 
 ## 👥 Authors
 
-- **[Friend's name]**: idea, content, history and philosophy expertise, testing
-- **[Your name]**: development, security, Azure deployment
+- **Dimitris Sapalidis**: idea, content, history and philosophy expertise, testing
+- **Myrto Theodoropoulou**: development, security, Azure deployment
 
 Built with AI assistance (Anthropic Claude). Architecture, security design, testing and deployment were reviewed and carried out by the authors.
 
