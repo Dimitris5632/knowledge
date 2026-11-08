@@ -1,0 +1,764 @@
+html, body, div, section, nav, main, footer, form, label, input, select, textarea, button, a, span, ul, li, p, img, svg {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f4ee;
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 24px;
+    background: #3d2f22;
+}
+nav a { color: #f7f4ee; text-decoration: none; margin-left: 16px; }
+nav a:hover { text-decoration: underline; }
+nav .logo { font-size: 1.4em; font-weight: bold; margin-left: 0; }
+
+main { max-width: 820px; margin: 32px auto; padding: 0 16px; }
+footer { text-align: center; color: #888; padding: 32px 16px; font-size: 0.9em; }
+
+h1 { color: #3d2f22; }
+h2 { color: #3d2f22; font-size: 1.25em; }
+a  { color: #8a5a2b; }
+
+form label { display: block; margin-bottom: 14px; font-weight: bold; }
+form label.inline { display: inline; font-weight: normal; margin-right: 16px; }
+form label small { display: block; font-weight: normal; }
+input[type=text], input[type=email], input[type=password], input[type=file], select, textarea {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px;
+    border: 1px solid #c9bfae;
+    border-radius: 4px;
+    background: #fff;
+    font: inherit;
+    font-weight: normal;
+}
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+.filters input[type=text], .filters select { display: inline-block; width: auto; flex: 1; margin: 0; }
+.inline-form { display: inline; }
+
+button, .button, .small-button {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #8a5a2b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+button:hover, .button:hover, .small-button:hover { background: #6e4720; }
+.button.secondary { background: #c9bfae; color: #2b2b2b; }
+.small-button { padding: 2px 10px; font-size: 0.85em; }
+.list li > .small-button { float: right; }
+.danger { background: #a33; }
+.danger:hover { background: #822; }
+
+.error   { background: #fbe3e3; color: #8b1e1e; padding: 8px 12px; border-radius: 4px; }
+.success { background: #e3f5e1; color: #22631c; padding: 8px 12px; border-radius: 4px; }
+.muted   { color: #888; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+.card  { flex: 1; min-width: 140px; background: #fff; padding: 16px; border-radius: 6px; text-align: center; }
+.card strong { font-size: 2em; color: #8a5a2b; }
+.two-columns { display: flex; flex-wrap: wrap; gap: 24px; }
+.two-columns section { flex: 1; min-width: 260px; background: #fff; padding: 16px 20px; border-radius: 6px; }
+
+.box { background: #fff; padding: 20px; border-radius: 6px; margin-bottom: 16px; }
+.list, .messages { list-style: none; padding: 0; }
+.list li, .messages li {
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 12px 16px;
+    border-radius: 6px;
+}
+.list li p { margin: 6px 0; }
+.actions { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+    display: inline-block;
+    background: #efe6d6;
+    color: #6e4720;
+    border-radius: 10px;
+    padding: 0 8px;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-right: 6px;
+}
+.dot.online { background: #3cb043; }
+.online-label { font-size: 0.5em; color: #3cb043; vertical-align: middle; }
+
+.score { display: flex; gap: 8px; flex-wrap: wrap; }
+.stance { display: inline-block; padding: 0 10px; border-radius: 10px; font-size: 0.85em; color: #fff; }
+.stance.for     { background: #3c8d4f; }
+.stance.against { background: #b0453a; }
+.stance.neutral { background: #888; }
+.post { background: #fff; padding: 12px 16px; border-radius: 6px; margin-bottom: 10px; border-left: 5px solid #888; }
+.post.for     { border-left-color: #3c8d4f; }
+.post.against { border-left-color: #b0453a; }
+.post p { margin: 4px 0; }
+
+.messages a { color: inherit; text-decoration: none; display: block; }
+.messages li.unread { border-left: 4px solid #8a5a2b; }
+.messages li.unread strong { color: #8a5a2b; }
+.tabs a { margin-right: 16px; }
+.tabs a.active { font-weight: bold; text-decoration: none; color: #2b2b2b; }
+.message-full { background: #fff; padding: 20px; border-radius: 6px; margin-bottom: 16px; }
+
+.badge {
+    background: #c0392b;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0 7px;
+    font-size: 0.8em;
+}
+
+body.landing, body.vase-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #f1e4cc;
+    background-color: #1a1410;
+}
+body.landing {
+    background-image:
+        linear-gradient(rgba(26, 20, 16, 0.75), rgba(26, 20, 16, 0.92)),
+        url('images/background.jpg'),
+        radial-gradient(circle at 50% 30%, #6b3418, #1a1410 70%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+body.landing nav, body.vase-page nav { background: #120d0a; }
+body.landing nav a, body.vase-page nav a { color: #e08a4a; }
+body.landing footer, body.vase-page footer { background: #120d0a; color: #b9a58a; padding: 16px; }
+body.landing footer a, body.vase-page footer a { color: #e08a4a; }
+body.landing main, body.vase-page main { flex: 1; width: 100%; max-width: none; margin: 0; padding: 0 0 1px; }
+body.landing button, body.landing .button, body.landing #chat-toggle,
+body.vase-page #chat-toggle { background: #c8622b; color: #1a0f08; }
+body.landing button:hover, body.landing .button:hover { background: #e08a4a; }
+body.landing .button.secondary { background: #e8dcc6; color: #1a1410; }
+body.landing .link-button { background: none; color: #c8622b; }
+
+.meander { display: block; width: 100%; height: 20px; color: #e08a4a; background: #120d0a; }
+
+.hero {
+    min-height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 16px;
+}
+.hero h1 { color: #f1e4cc; font-size: 2.8em; margin-bottom: 8px; letter-spacing: 1px; }
+.hero h1 span { color: #e08a4a; }
+.hero p  { font-size: 1.15em; color: #d8c7a8; margin-bottom: 28px; }
+.button.big { font-size: 1.3em; padding: 14px 52px; letter-spacing: 2px; font-weight: bold; }
+
+.panel {
+    max-width: 460px;
+    margin: 40px auto;
+    padding: 28px;
+    border-radius: 6px;
+    border-top: 6px solid #c8622b;
+    background: #f6eee2;
+    color: #2b2118;
+}
+.panel h1 { margin-top: 0; font-size: 1.5em; color: #1a1410; }
+.panel a { color: #a8501f; }
+.panel-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.panel-links { text-align: center; font-size: 0.95em; margin: 14px 0 0; }
+.link-button { background: none; color: #8a5a2b; padding: 0; text-decoration: underline; }
+.link-button:hover { background: none; }
+
+footer a { color: #8a5a2b; }
+
+.vase-split { display: flex; min-height: calc(100vh - 160px); }
+.vase-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: flex 0.4s ease;
+}
+.vase-side:hover { flex: 1.2; }
+.vase-philosophy { background: #c8622b; color: #1a0f08; }
+.vase-history    { background: #1a1410; color: #e08a4a; }
+.vase-icon { width: 170px; height: 170px; transition: transform 0.4s ease; }
+.vase-side:hover .vase-icon { transform: scale(1.08); }
+.vase-label { letter-spacing: 8px; font-size: 0.85em; margin-top: 6px; opacity: 0.8; }
+.vase-title { font-size: 2.2em; }
+.vase-quote { opacity: 0.85; }
+.vase-button {
+    margin-top: 18px;
+    padding: 12px 36px;
+    border: 2px solid currentColor;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+.vase-philosophy:hover .vase-button { background: #1a0f08; color: #c8622b; }
+.vase-history:hover .vase-button    { background: #e08a4a; color: #1a1410; }
+
+@media (max-width: 760px) {
+    .vase-split { flex-direction: column; }
+    .vase-side:hover { flex: 1; }
+    .vase-icon { width: 120px; height: 120px; }
+    .vase-title { font-size: 1.7em; }
+    .hero h1 { font-size: 2em; }
+}
+
+#chat-toggle {
+    position: fixed;
+    right: 20px; bottom: 20px;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    font-size: 1.6em;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+#chat-box {
+    position: fixed;
+    right: 20px; bottom: 88px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    background: #fff;
+    color: #2b2b2b;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 10;
+}
+#chat-header { background: #3d2f22; color: #f7f4ee; padding: 10px 14px; font-weight: bold; }
+#chat-messages { height: 260px; overflow-y: auto; padding: 10px; background: #f7f4ee; }
+#chat-messages p { margin: 6px 0; padding: 8px 10px; border-radius: 10px; max-width: 85%; }
+#chat-messages p.bot  { background: #fff; border: 1px solid #e3d9c8; }
+#chat-messages p.user { background: #8a5a2b; color: #fff; margin-left: auto; }
+#chat-form { display: flex; border-top: 1px solid #e3d9c8; }
+#chat-form input { margin: 0; border: none; border-radius: 0; }
+#chat-form button { border-radius: 0; padding: 8px 12px; background: #8a5a2b; color: #fff; }
+
+.password-rules { list-style: none; padding: 10px 14px; margin: -6px 0 16px; background: #fff; border-radius: 8px; font-size: 0.9em; }
+.password-rules li { color: #a33; margin: 3px 0; }
+.password-rules li::before { content: "✗ "; font-weight: bold; }
+.password-rules li.ok { color: #22631c; }
+.password-rules li.ok::before { content: "✓ "; }
+
+.avatar { border-radius: 50%; object-fit: cover; vertical-align: middle; }
+.avatar-small { width: 40px; height: 40px; margin-right: 8px; }
+.avatar-large { width: 110px; height: 110px; }
+.avatar-empty {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #c8622b;
+    color: #fff;
+    font-weight: bold;
+}
+.avatar-small.avatar-empty { font-size: 1.1em; }
+.avatar-large.avatar-empty { font-size: 2.6em; }
+.photo-picker { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.photo-picker label { flex: 1; margin: 0; }
+.profile-head { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.profile-head h1 { margin-top: 0; }
+
+.terms-check { display: flex; gap: 8px; align-items: flex-start; font-weight: normal; font-size: 0.95em; }
+.terms-check input { margin-top: 4px; }
+
+[hidden] { display: none !important; }
+
+body { background: #1a1410; color: #f1e4cc; }
+nav { background: #120d0a; }
+nav a { color: #e08a4a; }
+h1, h2 { color: #f1e4cc; }
+a { color: #e08a4a; }
+footer { color: #b9a58a; }
+footer a { color: #e08a4a; }
+.muted { color: #b9a58a; }
+
+.box, .card, .two-columns section, .list li, .messages li, .post, .message-full {
+    background: #241b15;
+    color: #f1e4cc;
+    border: 1px solid #3a2c22;
+}
+.card strong { color: #e08a4a; }
+.tag { background: #3a2c22; color: #e08a4a; }
+.tabs a.active { color: #f1e4cc; }
+.messages li.unread { border-left: 4px solid #c8622b; }
+.messages li.unread strong { color: #e08a4a; }
+.post.for     { border-left: 5px solid #3c8d4f; }
+.post.against { border-left: 5px solid #b0453a; }
+.post.neutral { border-left: 5px solid #888; }
+
+input[type=text], input[type=email], input[type=password], input[type=file], select, textarea {
+    background: #fff8ee;
+    color: #1a1410;
+    border-color: #6b4a33;
+}
+
+button, .button, .small-button, #chat-toggle { background: #c8622b; color: #1a0f08; }
+button:hover, .button:hover, .small-button:hover { background: #e08a4a; }
+.button.secondary { background: #e8dcc6; color: #1a1410; }
+.danger { background: #a33; color: #fff; }
+.danger:hover { background: #c44; }
+.link-button { background: none; }
+
+.error   { background: #4a1d1a; color: #f6c9c2; }
+.success { background: #1f3a1d; color: #c8eac1; }
+.success a, .error a { color: #fff; }
+
+nav { gap: 12px; }
+.nav-links { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.nav-links > a {
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-bottom: 2px solid transparent;
+}
+.nav-links > a:hover { background: #241b15; text-decoration: none; }
+.nav-links > a.active { border-bottom-color: #e08a4a; color: #f1e4cc; }
+.nav-cta { background: #c8622b; color: #1a0f08 !important; font-weight: bold; margin-left: 8px !important; }
+.nav-cta:hover { background: #e08a4a !important; }
+
+#menu-toggle { display: none; background: none; color: #e08a4a; font-size: 1.6em; padding: 2px 10px; }
+
+.user-menu { position: relative; margin-left: 8px; }
+.user-menu summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px 4px 4px;
+    border: 1px solid #3a2c22;
+    border-radius: 30px;
+    color: #f1e4cc;
+    cursor: pointer;
+}
+.user-menu summary::-webkit-details-marker { display: none; }
+.user-menu summary::after { content: "▾"; color: #e08a4a; }
+.user-menu-list {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    min-width: 210px;
+    background: #241b15;
+    border: 1px solid #3a2c22;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    z-index: 20;
+}
+.user-menu-list a { display: block; margin: 0; padding: 8px 12px; border-radius: 4px; color: #f1e4cc; }
+.user-menu-list a:hover { background: #3a2c22; text-decoration: none; }
+.avatar-nav { width: 30px; height: 30px; }
+.avatar-nav.avatar-empty { font-size: 0.9em; }
+
+@media (max-width: 760px) {
+    #menu-toggle { display: block; }
+    .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; }
+    #site-nav.open .nav-links { display: flex; }
+    .nav-links > a { padding: 10px 12px; }
+    .nav-cta { margin: 6px 0 0 !important; text-align: center; }
+    .user-menu { margin: 6px 0 0; }
+    .user-menu-list { position: static; margin-top: 6px; box-shadow: none; }
+}
+
+.video-list { display: flex; flex-direction: column; gap: 16px; }
+.video-item h2 { margin: 12px 0 4px; }
+.video-item p { margin: 6px 0; }
+.video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.video-frame iframe, .video-frame video {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ---------- Ασφάλεια ---------- */
+.flash { background: #1f3a1d; color: #c8eac1; padding: 8px 12px; border-radius: 4px; }
+.warning { background: #3a2410; border-left: 5px solid #e08a4a; color: #f1e4cc; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px; }
+.warning a { color: #e08a4a; }
+.table-wrap { overflow-x: auto; background: #241b15; border: 1px solid #3a2c22; border-radius: 6px; margin-bottom: 16px; }
+.log-table { width: 100%; border-collapse: collapse; font-size: 0.92em; color: #f1e4cc; }
+.log-table th, .log-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #3a2c22; vertical-align: top; }
+.log-table th { background: #120d0a; color: #e08a4a; white-space: nowrap; }
+.log-table tr.bad td { background: #34191a; }
+.log-table tr.bad td:first-child { border-left: 4px solid #e0675a; }
+.log-table .muted { color: #b9a58a; }
+.card.alert strong { color: #e0675a; }
+.status-on  { color: #7fd17a; }
+.status-off { color: #e0675a; }
+.code-input { font-size: 1.6em; letter-spacing: 8px; text-align: center; font-family: monospace; max-width: 220px; }
+.qr-wrap { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.qr-wrap > div:last-child { flex: 1; min-width: 220px; }
+.qr-box { background: #fff; color: #1a1410; padding: 10px; width: 200px; height: 200px; font-size: 0.85em; }
+.secret-key { font-family: monospace; font-size: 1.1em; background: #120d0a; color: #e08a4a; padding: 8px 12px; border-radius: 4px; letter-spacing: 1px; overflow-wrap: anywhere; }
+
+code { overflow-wrap: anywhere; }
+
+/* ---------- Ρυθμίσεις ---------- */
+.danger-zone { border: 1px solid #b0453a; }
+.danger-zone h2 { color: #e0675a; }
+
+/* ---------- Σελίδα Ασφάλεια ---------- */
+.sec-checks { list-style: none; padding: 0; margin: 0; }
+.sec-checks li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #3a2c22; }
+.sec-checks li:last-child { border-bottom: none; }
+.sec-checks li > div { flex: 1; }
+.sec-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; font-weight: bold; flex-shrink: 0; }
+.sec-checks li.ok .sec-icon  { background: #2f5a2a; color: #d6f2cf; }
+.sec-checks li.bad .sec-icon { background: #7a2a22; color: #ffd9d3; }
+.sec-checks li.bad strong { color: #e0675a; }
+.sec-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.sec-links a { display: block; padding: 14px; border: 1px solid #3a2c22; border-radius: 6px; text-decoration: none; background: #1a1410; }
+.sec-links a:hover { border-color: #e08a4a; }
+.sec-links strong { display: block; color: #e08a4a; }
+.sec-links small { color: #b9a58a; }
+
+
+/* ---------- Ρητό της ημέρας ---------- */
+.quote-box { margin: 0 0 24px; padding: 18px 22px; background: #241b15; border-left: 5px solid #c8622b; border-radius: 6px; }
+.quote-box p { font-size: 1.3em; font-style: italic; margin: 6px 0; color: #f1e4cc; }
+.quote-box cite { color: #e08a4a; font-style: normal; }
+.quote-label { letter-spacing: 4px; font-size: 0.75em; color: #b9a58a; text-transform: uppercase; }
+.hero-quote { margin-top: 34px; font-style: italic; color: #d8c7a8; max-width: 560px; }
+.hero-quote small { color: #e08a4a; font-style: normal; }
+
+/* ---------- «Συμφωνώ» στα debates ---------- */
+.like-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.like-button { background: none; border: 1px solid #6b4a33; color: #e08a4a; padding: 3px 12px; border-radius: 20px; font-size: 0.9em; }
+.like-button:hover { background: #3a2c22; }
+.like-button.liked { background: #c8622b; color: #1a0f08; border-color: #c8622b; }
+.like-count { color: #b9a58a; font-size: 0.9em; }
+.post.top-post { box-shadow: 0 0 0 2px #e08a4a; }
+.top-label { display: inline-block; background: #e08a4a; color: #1a0f08; border-radius: 10px; padding: 0 8px; font-size: 0.8em; margin-left: 6px; }
+
+/* ---------- Ζωντανές ειδοποιήσεις ---------- */
+@keyframes badge-pulse { 0% { transform: scale(1); } 40% { transform: scale(1.5); } 100% { transform: scale(1); } }
+.badge.pulse { display: inline-block; animation: badge-pulse 0.6s ease 2; }
+
+/* ---------- Αναζήτηση στο μενού ---------- */
+.nav-search { margin: 0 4px; }
+.nav-search input[type=text] { display: inline-block; width: 150px; margin: 0; padding: 5px 10px; border-radius: 16px; font-size: 0.9em; }
+.search-list { list-style: none; padding: 0; margin: 0; }
+.search-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #3a2c22; }
+.search-list li:last-child { border-bottom: none; }
+
+/* ---------- Αγαπημένα ---------- */
+.fav-form { display: inline; }
+.fav-button { background: none; border: none; padding: 0 6px 0 0; font-size: 1.3em; line-height: 1; color: #b9a58a; cursor: pointer; }
+.fav-button:hover { background: none; color: #e0675a; }
+.fav-button.faved { color: #e0675a; }
+
+/* ---------- Σελίδες ---------- */
+.pagination { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 20px 0; }
+.pagination a, .pagination span { padding: 5px 11px; border-radius: 4px; border: 1px solid #3a2c22; text-decoration: none; }
+.pagination a:hover { border-color: #e08a4a; }
+.pagination .current { background: #c8622b; color: #1a0f08; border-color: #c8622b; font-weight: bold; }
+.pagination .dots { border: none; color: #b9a58a; }
+
+/* ---------- Κριτικές ---------- */
+.stars { color: #e8b04a; letter-spacing: 1px; }
+.stars-empty { color: #4a3a2e; }
+.rating-summary { font-size: 1.2em; }
+.secondary-small { background: #3a2c22; color: #f1e4cc; }
+.secondary-small:hover { background: #4a3a2e; }
+.star-input { display: inline-flex; flex-direction: row-reverse; gap: 4px; margin-bottom: 12px; }
+.star-input input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.star-input label { display: inline; margin: 0; font-size: 2em; color: #4a3a2e; cursor: pointer; }
+.star-input label:hover, .star-input label:hover ~ label,
+.star-input input:checked ~ label { color: #e8b04a; }
+.star-input input:focus-visible + label { outline: 2px solid #e08a4a; }
+
+/* ---------- Γράφημα (Κέντρο ασφαλείας) ---------- */
+.chart { display: flex; gap: 8px; align-items: flex-end; height: 200px; padding-top: 18px; border-bottom: 1px solid #3a2c22; }
+.chart-day { flex: 1; display: flex; flex-direction: column; height: 100%; }
+.chart-bars { flex: 1; display: flex; align-items: flex-end; gap: 2px; justify-content: center; }
+.bar { width: 30%; max-width: 18px; min-height: 2px; position: relative; border-radius: 3px 3px 0 0; }
+.bar span { position: absolute; top: -17px; left: 50%; transform: translateX(-50%); font-size: 0.7em; color: #b9a58a; }
+.bar-good { background: #5fa35a; }
+.bar-bad { background: #e0675a; }
+.bar-attacks { background: #e8b04a; }
+.chart-label { text-align: center; font-size: 0.8em; color: #b9a58a; padding-top: 4px; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85em; margin-bottom: 8px; }
+.chart-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; }
+
+/* ---------- Εκτύπωση βιογραφικού ---------- */
+@media print {
+    body, body.vase-page { background: #fff !important; color: #000 !important; }
+    nav, footer, .meander, #chat-toggle, #chat-box, .no-print, .flash { display: none !important; }
+    main { max-width: none; margin: 0; padding: 0 12px; }
+    .box { background: #fff !important; color: #000 !important; border: none !important; border-bottom: 1px solid #ccc !important; border-radius: 0; padding: 10px 0; page-break-inside: avoid; }
+    h1, h2, a, .muted, .online-label { color: #000 !important; text-decoration: none; }
+    .online-label { display: none; }
+}
+
+@media (max-width: 760px) {
+    .nav-search { margin: 6px 0 0; }
+    .nav-search input[type=text] { width: 100%; }
+}
+
+/* ---------- Εικόνες στη βιβλιοθήκη ---------- */
+.doc-thumb-link { float: right; margin: 0 0 8px 12px; }
+.doc-thumb { display: block; width: 110px; height: 110px; object-fit: cover; border-radius: 4px; border: 1px solid #3a2c22; }
+.doc-image { display: block; max-width: 100%; max-height: 520px; margin: 12px 0; border-radius: 4px; border: 1px solid #3a2c22; }
+.list li::after { content: ""; display: block; clear: both; }
+@media (max-width: 760px) {
+    .doc-thumb { width: 72px; height: 72px; }
+}
+
+/* ---------- Σύνδεσμοι στα μηνύματα ---------- */
+.ext-link { overflow-wrap: anywhere; }
+.ext-link::after { content: " ↗"; font-size: 0.85em; }
+.bad-link { color: #e0675a; text-decoration: line-through; cursor: help; overflow-wrap: anywhere; }
+@media (min-width: 761px) and (max-width: 1050px) {
+    .nav-search input[type=text] { width: 110px; }
+    .nav-links > a { padding: 8px 8px; }
+}
+.doc-credit { margin: 4px 0; }
+.help-box { margin: 0 0 14px; }
+.help-box summary { cursor: pointer; font-weight: bold; color: #e08a4a; }
+.help-box ul { margin: 10px 0; padding-left: 20px; }
+.help-box li { margin: 4px 0; font-weight: normal; }
+
+/* Οδηγία κάτω από το password + μετρητής χαρακτήρων */
+.pw-help { display: block; margin-top: 4px; font-size: 0.85em; color: #6b5a4a; font-weight: normal; }
+.pw-count { display: inline-block; margin-left: 6px; padding: 0 8px; border-radius: 10px; background: #f3d6cf; color: #a33; font-weight: bold; }
+.pw-count.ok { background: #d8ecd2; color: #22631c; }
+
+/* ===== Αναβαθμισμένο φόντο: ίδια εικόνα, ίδια χρώματα, πιο εντυπωσιακό ===== */
+body.landing, body.vase-page { background-image: none; position: relative; }
+
+/* 1. Η εικόνα σου, με αργό «ζουμ» σαν ντοκιμαντέρ */
+body.landing::before, body.vase-page::before {
+    content: "";
+    position: fixed;
+    inset: -4%;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(26, 20, 16, 0.55), rgba(26, 20, 16, 0.88)),
+        url('images/background.jpg'),
+        radial-gradient(circle at 50% 30%, #7a3a18, #1a1410 70%);
+    background-size: cover;
+    background-position: center;
+    animation: kb-zoom 40s ease-in-out infinite alternate;
+}
+body.vase-page::before { opacity: 0.55; }
+
+/* 2. Χρυσό φως στο κέντρο + σκοτείνιασμα στις γωνίες + σκόνη που αιωρείται */
+body.landing::after, body.vase-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 50% 38%, rgba(224, 138, 74, 0.28), transparent 45%),
+        radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.65) 100%),
+        radial-gradient(1.5px 1.5px at 12% 80%, rgba(241, 228, 204, 0.55), transparent),
+        radial-gradient(1px 1px at 28% 40%, rgba(241, 228, 204, 0.45), transparent),
+        radial-gradient(2px 2px at 47% 70%, rgba(224, 138, 74, 0.55), transparent),
+        radial-gradient(1px 1px at 63% 25%, rgba(241, 228, 204, 0.4), transparent),
+        radial-gradient(1.5px 1.5px at 78% 60%, rgba(224, 138, 74, 0.5), transparent),
+        radial-gradient(1px 1px at 90% 30%, rgba(241, 228, 204, 0.45), transparent);
+    background-size: 100% 100%, 100% 100%, 320px 320px, 260px 260px, 380px 380px, 300px 300px, 340px 340px, 280px 280px;
+    animation: kb-glow 7s ease-in-out infinite alternate, kb-dust 60s linear infinite;
+}
+
+/* 3. Ο τίτλος σε χρυσό που «γυαλίζει» */
+.hero { animation: kb-rise 1.2s ease-out both; }
+.hero h1 { text-shadow: 0 2px 18px rgba(224, 138, 74, 0.35); }
+.hero h1 span {
+    background: linear-gradient(100deg, #c8622b 20%, #f5c98a 45%, #e08a4a 60%, #c8622b 80%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: kb-shine 6s linear infinite;
+}
+.hero p { animation: kb-rise 1.2s ease-out 0.3s both; }
+
+/* 4. Το κουμπί «Έναρξη» αναπνέει */
+body.landing .button.big {
+    box-shadow: 0 0 0 0 rgba(224, 138, 74, 0.6), 0 8px 24px rgba(0, 0, 0, 0.45);
+    animation: kb-rise 1.2s ease-out 0.6s both, kb-pulse 2.8s ease-in-out 2s infinite;
+}
+
+/* 5. Μαίανδρος με χρυσή λάμψη */
+.meander { filter: drop-shadow(0 0 4px rgba(224, 138, 74, 0.45)); }
+
+/* 6. Τα πλαίσια (login, εγγραφή) σαν κάρτες που «αιωρούνται» */
+body.landing .panel {
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(224, 138, 74, 0.25);
+    animation: kb-rise 0.9s ease-out both;
+}
+
+/* 7. Φιλόσοφος / Ιστορικός: οι αμφορείς επιπλέουν και λάμπουν */
+.vase-philosophy { background: linear-gradient(160deg, #d87436, #b6551f 60%, #9c4518); }
+.vase-history    { background: linear-gradient(160deg, rgba(34, 25, 19, 0.92), rgba(18, 13, 10, 0.95)); }
+.vase-icon { animation: kb-float 5s ease-in-out infinite; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45)); }
+.vase-history .vase-icon { animation-delay: -2.5s; filter: drop-shadow(0 0 22px rgba(224, 138, 74, 0.35)); }
+
+@keyframes kb-zoom  { from { transform: scale(1); } to { transform: scale(1.08) translateY(-1%); } }
+@keyframes kb-glow  { from { opacity: 0.85; } to { opacity: 1; } }
+@keyframes kb-dust  { from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+                      to   { background-position: 0 0, 0 0, 0 -320px, 0 -260px, 0 -380px, 0 -300px, 0 -340px, 0 -280px; } }
+@keyframes kb-shine { to { background-position: -250% center; } }
+@keyframes kb-rise  { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes kb-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(224, 138, 74, 0.55), 0 8px 24px rgba(0, 0, 0, 0.45); }
+                      50%      { box-shadow: 0 0 0 14px rgba(224, 138, 74, 0), 0 8px 24px rgba(0, 0, 0, 0.45); } }
+@keyframes kb-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+
+/* Όποιος έχει ζητήσει «λιγότερη κίνηση» στο κινητό του, βλέπει το φόντο ακίνητο */
+@media (prefers-reduced-motion: reduce) {
+    body.landing::before, body.vase-page::before, body.landing::after, body.vase-page::after,
+    .hero, .hero p, .hero h1 span, body.landing .button.big, body.landing .panel, .vase-icon { animation: none; }
+}
+
+/* Ζωντανός έλεγχος username */
+.username-status { display: block; margin-top: 4px; font-size: 0.85em; font-weight: normal; color: #6b5a4a; }
+.username-status.good { color: #22631c; font-weight: bold; }
+.username-status.bad  { color: #a33; font-weight: bold; }
+.username-status.wait { color: #8a6a2b; }
+.username-ideas { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.username-idea {
+    padding: 3px 10px; border-radius: 12px; font-size: 0.85em;
+    background: #f3e3cf; color: #7a3d14; border: 1px solid #e0b98f; cursor: pointer;
+}
+.username-idea:hover { background: #e08a4a; color: #1a0f08; }
+
+/* Ισχύς κωδικού: μπάρα + λέξη */
+.pw-strength { margin-top: 6px; }
+.pw-bar { height: 8px; border-radius: 4px; background: #e6dccd; overflow: hidden; }
+.pw-bar span { display: block; height: 100%; width: 0; border-radius: 4px; transition: width 0.3s, background 0.3s; }
+.pw-label { display: block; margin-top: 3px; font-size: 0.85em; font-weight: bold; color: #6b5a4a; }
+.pw-strength.level-1 .pw-bar span { background: #c0392b; }
+.pw-strength.level-2 .pw-bar span { background: #e0a030; }
+.pw-strength.level-3 .pw-bar span { background: #5a9a3c; }
+.pw-strength.level-4 .pw-bar span { background: #22631c; }
+.pw-strength.level-1 .pw-label { color: #a33; }
+.pw-strength.level-2 .pw-label { color: #9a6a10; }
+.pw-strength.level-3 .pw-label, .pw-strength.level-4 .pw-label { color: #22631c; }
+
+/* 3 ερωτήσεις ασφαλείας */
+.question-set { border: 1px solid #e0c9a8; border-radius: 8px; padding: 10px 14px 4px; margin: 0 0 16px; }
+.question-set legend { padding: 0 6px; font-weight: bold; }
+.question-pair { border-left: 3px solid #e08a4a; padding-left: 10px; margin: 12px 0; }
+
+/* Κωδικός email */
+.code-box { margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: #fff7e8; border: 1px dashed #e08a4a; }
+.code-input { font-size: 1.4em; letter-spacing: 6px; text-align: center; max-width: 220px; font-family: monospace; }
+
+/* PIN γρήγορης σύνδεσης */
+.pin-panel { text-align: center; max-width: 360px; }
+.pin-input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pin-dots { display: flex; justify-content: center; gap: 12px; margin: 14px 0 20px; }
+.pin-dots i { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #c8622b; transition: background 0.15s; }
+.pin-dots i.on { background: #c8622b; }
+.pin-keypad { display: grid; grid-template-columns: repeat(3, 72px); gap: 12px; justify-content: center; }
+.pin-keypad button { width: 72px; height: 72px; border-radius: 50%; font-size: 1.5em; padding: 0; }
+.device-list { list-style: none; padding: 0; }
+.device-list li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e6dccd; }
+.pin-user { font-size: 1.1em; font-weight: bold; margin: -6px 0 4px; }
+
+/* Έλεγχος νομιμότητας */
+.risk-result.risk-low    { border-left: 6px solid #3c8a2e; }
+.risk-result.risk-medium { border-left: 6px solid #e0a030; }
+.risk-result.risk-high   { border-left: 6px solid #c0392b; }
+.status-pending  { background: #f6e3b4; color: #7a5a10; }
+.status-rejected { background: #f3d6cf; color: #a33; }
+.risk-note { margin: 6px 0; padding: 6px 10px; border-radius: 6px; background: #fff3e0; font-size: 0.9em; }
+.legal-box { background: #fbf6ec; border-left: 4px solid #c8622b; }
+.review-item { border: 1px solid #e6dccd; border-left-width: 6px; border-radius: 8px; padding: 10px 14px; margin: 12px 0; }
+.review-item.risk-medium { border-left-color: #e0a030; }
+.review-item.risk-high   { border-left-color: #c0392b; }
+.review-item.risk-low    { border-left-color: #3c8a2e; }
+.review-item h3 { margin: 0 0 4px; }
+.review-form .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Scanner εγγράφων */
+.scanner-launch { margin: 0 0 16px; padding: 12px 14px; border-radius: 10px; background: #fbf1e3; border: 1px dashed #e08a4a; }
+.scanner-launch small { display: block; margin-top: 6px; }
+.scanner {
+    position: fixed; inset: 0; z-index: 1000; overflow-y: auto;
+    background: #1a1410; color: #f1e4cc; padding: 12px 16px 24px;
+}
+body.scanner-open { overflow: hidden; }
+.scanner-top { display: flex; justify-content: space-between; align-items: center; font-size: 1.1em; }
+.scanner-top button { background: none; color: #f1e4cc; font-size: 1.4em; padding: 4px 10px; }
+.scanner-warning { font-size: 0.85em; background: rgba(224, 138, 74, 0.15); border-left: 3px solid #e08a4a; padding: 6px 10px; border-radius: 4px; }
+.scanner .muted { color: #b9a58a; }
+.scan-pages { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; margin: 12px 0; }
+.scan-page { position: relative; background: #2a211a; border-radius: 6px; padding: 4px; text-align: center; }
+.scan-page img { width: 100%; height: 120px; object-fit: contain; background: #fff; border-radius: 4px; }
+.scan-page span { position: absolute; top: 6px; left: 8px; background: #c8622b; color: #1a0f08; border-radius: 10px; padding: 0 7px; font-weight: bold; font-size: 0.8em; }
+.scan-page div { display: flex; justify-content: center; gap: 4px; margin-top: 4px; }
+.scan-page button { padding: 2px 8px; font-size: 0.85em; }
+.scan-buttons, .scan-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+.scan-add { cursor: pointer; }
+.scan-stage { width: 100%; display: flex; justify-content: center; background: #000; border-radius: 8px; padding: 6px; }
+.scan-stage canvas { max-width: 100%; touch-action: none; }
+.scan-status { min-height: 1.4em; color: #e8c79a; }
+#scan-make { width: 100%; margin: 6px 0; }
+
+/* ΕΛ | EN */
+.lang-switch { display: inline-flex; gap: 2px; margin-left: auto; margin-right: 10px; font-size: 0.85em; font-family: Arial, sans-serif; }
+.lang-switch a { padding: 3px 8px; border-radius: 12px; text-decoration: none; color: inherit; opacity: 0.7; border: 1px solid transparent; }
+.lang-switch a.active { opacity: 1; border-color: currentColor; font-weight: bold; }
+
+/* Αποσύνδεση ως κουμπί μέσα στο μενού (ίδια εμφάνιση με τους συνδέσμους) */
+.logout-form { margin: 0; }
+.logout-form button { display: block; width: 100%; text-align: left; margin: 0; padding: 8px 12px; border-radius: 4px;
+    background: none; color: #f1e4cc; font: inherit; font-weight: normal; cursor: pointer; }
+.logout-form button:hover { background: #3a2c22; }
+.change-email summary { cursor: pointer; color: #a8501f; } .change-email form { margin-top: 10px; text-align: left; }
+
+/* ===== Contrast fixes: boxes readable on the dark pages (and on the light login panels) ===== */
+.risk-note      { background: rgba(224, 160, 48, 0.14); border-left: 3px solid #e0a030; color: inherit; }
+.risk-note small { color: inherit; opacity: 0.9; }
+.legal-box      { background: rgba(200, 98, 43, 0.12); border-left: 4px solid #c8622b; color: inherit; }
+.scanner-launch { background: rgba(224, 138, 74, 0.10); border: 1px dashed #e08a4a; color: inherit; }
+.code-box       { background: rgba(224, 138, 74, 0.10); border: 1px dashed #e08a4a; color: inherit; }
+.question-set   { border-color: rgba(224, 138, 74, 0.45); }
+.pw-help, .pw-label, .username-status { color: inherit; opacity: 0.85; }
+.pw-strength.level-1 .pw-label, .username-status.bad  { color: #e06a5a; opacity: 1; }
+.pw-strength.level-2 .pw-label, .username-status.wait { color: #e0a030; opacity: 1; }
+.pw-strength.level-3 .pw-label, .pw-strength.level-4 .pw-label, .username-status.good { color: #6cc25a; opacity: 1; }
+.panel .pw-strength.level-1 .pw-label, .panel .username-status.bad { color: #a33; }
+.panel .pw-strength.level-2 .pw-label, .panel .username-status.wait { color: #8a5a10; }
+.panel .pw-strength.level-3 .pw-label, .panel .pw-strength.level-4 .pw-label, .panel .username-status.good { color: #22631c; }
+.device-list li { border-bottom-color: rgba(241, 228, 204, 0.15); }
+.change-email summary { color: #e08a4a; }
+.panel .change-email summary { color: #a8501f; }
