@@ -1,0 +1,17 @@
+# Secrets and local settings
+.env
+
+# User uploads (documents, profile photos, videos) — never in git
+/storage/uploads/*
+/storage/photos/*
+/storage/videos/*
+!/storage/*/.gitkeep
+
+# Build output and tools
+/build/
+/vendor/
+/node_modules/
+*.zip
+.phpunit.result.cache
+.DS_Store
+Thumbs.db

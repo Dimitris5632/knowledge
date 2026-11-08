@@ -1,0 +1,11 @@
+# XAMPP / Apache: only the public/ folder is reachable from the browser.
+# http://localhost/knowledgebase/  →  public/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$ public/ [L]
+    RewriteCond %{REQUEST_URI} !/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+<FilesMatch "^\.(env|git)">
+    Require all denied
+</FilesMatch>
